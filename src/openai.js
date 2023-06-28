@@ -9,25 +9,7 @@ import { Markup, Telegraf } from "telegraf";
 import { message } from "telegraf/filters";
 const bot = new Telegraf(config.get('TELEGRAM_TOKEN'))
 
-const client = postgres('postgres://ksepissj:M8KoCbUXeX5NRLIJqvJ-WTJssfWVZvVH@mahmud.db.elephantsql.com/ksepissj',{
-    host: "mahmud.db.elephantsql.com",
-    port: 5432,
-    database: "ksepissj",
-    user: "ksepissj",
-    password: "M8KoCbUXeX5NRLIJqvJ-WTJssfWVZvVH",
-})
-
-await client`
-          CREATE TABLE IF NOT EXISTS usersAiBot(
-          id serial PRIMARY KEY,
-          user_id bigint,
-          date_buy TIMESTAMP,
-          date_ending TIMESTAMP,
-          count_tokens int,
-          count_queries int,
-          tarif_plan text
-          )
-        `
+const client =''
 
 export let UserDialogues = {};
 export async function chatGen(ctx, textt) {
